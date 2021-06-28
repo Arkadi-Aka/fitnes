@@ -1,0 +1,22 @@
+<form class="col s12 white" (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="first_name" placeholder="First Name" type="text" ngModel name="first_name" required #first_name="ngModel">
+      <span *ngIf="!first_name.valid && first_name.touched">Please enter a first name</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="password" placeholder="Password" type="password" ngModel name="password" required #password="ngModel">
+      <span *ngIf="!password.valid && password.touched">Please enter a password</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field">
+      <button class="btn-large btn-submit" [disabled]="!f.valid" type="submit">Login</button>
+    </div>
+  </div>
+</form>
