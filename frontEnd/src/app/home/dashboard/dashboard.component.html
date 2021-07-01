@@ -1,0 +1,49 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="container-fluid">
+  <div class="col s12">
+    <div class="dashboardDiv">
+      <div class="row">
+        <p class="namesDiv">Hello {{ username }}</p>
+        <p class="comment">Today is your day off, rest and recharge batteries</p>
+      </div>
+      <div class="row">
+        <div class="col s2 offset-s2">
+          <div class="col s3">
+            <i class="material-icons">fitness_center</i>
+          </div>
+          <div class="col s9">
+            <div class="row">Programs</div>
+            <div class="row numbers">{{ programs }}</div>
+          </div>
+        </div>
+        <div class="col s2">
+          <div class="col s3">
+            <i class="material-icons">accessibility</i>
+          </div>
+          <div class="col s9">
+            <div class="row">Workouts</div>
+            <div class="row numbers">{{ workout }}</div>
+          </div>
+        </div>
+        <div class="col s2">
+          <div class="col s3">
+            <i class="material-icons">opacity</i>
+          </div>
+          <div class="col s9">
+            <div class="row">Calories</div>
+            <div class="row numbers">{{ calories }}</div>
+          </div>
+        </div>
+        <div class="col s2">
+          <div class="col s3">
+            <i class="material-icons">perm_identity</i>
+          </div>
+          <div class="col s9">
+            <div class="row">Weight</div>
+            <div class="row numbers">{{ weight }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import {AuthService} from '../../services/auth.service';
+import { Router } from '@angular/router';
+
 
 
 @Injectable()
@@ -17,10 +18,11 @@ export class ConfigService {
 })
 export class SignUpComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              private router: Router) { }
   public onSubmit(form: NgForm){
     this.authService.register(form.value).subscribe((data:any) => {
-      console.log(data)
+      this.router.navigate(['login']);
     })
   }
   ngOnInit(): void {

@@ -25,8 +25,6 @@ router.route('/login').post(
 
 router.post(
     '/register',
-    upload.single('image'),
-    // body('email').isEmail(),
     body('name').exists().isLength({min: 6}),
     body('password').exists().isLength({min: 6}).custom(value => {
         return new RegExp("^[A-Z0-9.,/ $@()]+$").test(value);

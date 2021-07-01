@@ -1,0 +1,23 @@
+.img-class {
+  background-image: url("../photos/fitness-hero-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: inherit;
+  height: 700px;
+}
+.title{
+  padding-top: 2%;
+  margin-top: 0;
+  margin-left: 45%;
+  font-size: 40px
+}
+.nameStyle{
+  margin-left: 10%;
+  font-weight: bold;
+  font-size: 40px;
+}
+.emailStyle{
+  margin-left: 10%;
+  font-size: 30px;
+}
+

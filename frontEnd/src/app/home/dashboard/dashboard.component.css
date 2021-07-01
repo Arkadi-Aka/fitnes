@@ -1,0 +1,22 @@
+.dashboardDiv{
+  height: 730px;
+  background-color: rgba(196, 196, 196, 0.72);
+}
+.namesDiv{
+  padding-top: 5%;
+  margin-top: 0;
+  margin-left: 25%;
+  font-size: 40px
+}
+.comment{
+  margin-top: 0;
+  margin-left: 25%;
+  font-size: 20px
+}
+i{
+  font-size: 40px;
+  color: lightskyblue;
+}
+.numbers{
+  font-weight: bold;
+}

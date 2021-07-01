@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {AuthService} from "../../services/auth.service";
 import {TokenService} from "../../services/token.service";
+import {Router} from "@angular/router";
 
 
 @Injectable()
@@ -19,10 +20,12 @@ export class ConfigService {
 export class SignInComponent implements OnInit {
 
   constructor(private authService: AuthService,
-              private tokenService: TokenService) { }
+              private tokenService: TokenService,
+              private router: Router) { }
   public onSubmit(form: NgForm){
     this.authService.login(form.value).subscribe((data:any) => {
-      this.tokenService.saveToken(data.token)
+      this.tokenService.saveToken(data.data);
+      this.router.navigate(['']);
     })
     }
   ngOnInit(): void {

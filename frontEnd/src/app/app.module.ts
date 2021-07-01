@@ -6,14 +6,25 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { MyProfileComponent } from './home/my-profile/my-profile.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { ProgramsComponent } from './home/programs/programs.component';
+import { FoodComponent } from './home/food/food.component';
+import {AuthInterceptorService} from "./services/auth-interceptor.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    HomeComponent,
+    MyProfileComponent,
+    DashboardComponent,
+    ProgramsComponent,
+    FoodComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

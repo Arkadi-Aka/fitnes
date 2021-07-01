@@ -35,6 +35,14 @@ export class AuthService {
 
   public logout() {
     this.tokenService.removeToken();
-    this.router.navigateByUrl('/login');
+    this.router.navigate(['login'])
+  }
+
+  public AutoLogin(){
+    if(this.tokenService.getToken()){
+      this.router.navigate([''])
+    }else{
+      this.router.navigate(['login'])
+    }
   }
 }

@@ -1,0 +1,31 @@
+<div class="row">
+  <h3>Enter food you have eaten</h3>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="input-field col s4">
+    <input id="food" type="text" name="food">
+    <label for="food">Food</label>
+  </div>
+  <div class="input-field col s4">
+    <input id="calories" type="text" name="calories">
+    <label for="calories">Calories</label>
+  </div>
+  <button class="btn waves-effect waves-light" type="submit" name="addFood">Add food</button>
+  </form>
+</div>
+<div class="row">
+  <h3>Entered food and their calories</h3>
+  <table>
+    <thead>
+    <tr>
+    <th>Food</th>
+    <th>Calories</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let food of foods">
+      <td>{{ food['food'] }}</td>
+      <td>{{ food['calories'] }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
